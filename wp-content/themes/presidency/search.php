@@ -1,7 +1,7 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
-<div class="container">
-  <h1>Search</h1>
+<div class= "container">
+    <h1>search</h1>
 </div>
 
-<?php get_footer() ?>
+<?php get_footer(); ?>

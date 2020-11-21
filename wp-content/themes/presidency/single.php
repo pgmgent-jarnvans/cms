@@ -1,13 +1,22 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
-<div class="hero">
-  <img src="https://www.nporadio1.nl/images/2020/11/18_50a613ce4e_ANP-424936610.jpg" alt="">
-</div>
+<?php get_template_part('components/hero') ?>
 
 <div class="container">
-  <a class="back" href="<?= get_home_url() ?>">Ga terug</a>
-  <h1><?php the_title() ?></h1>
-  <div><?php the_content() ?></div>
-</div>
+    <a class="btn-back" href="<?php echo get_home_url() ?>">Ga terug</a>
 
-<?php get_footer() ?>
+    <div>
+        <h1><?php the_title() ?></h1>
+        <div><?php the_content() ?></div>
+    </div>
+
+    <div>
+        <?php comments_template() ?>
+    </div>
+
+    <div>
+        <?php previous_post_link('link', 'Previous') ?>
+        <?php next_post_link() ?>
+    </div>
+</div>
+<?php get_footer(); ?>

@@ -1,9 +1,7 @@
-@import '~sanitize.css';
-
 /*
-Theme Name: Presidency
-Author: Jarne Van Steendam
-Description: My first wordpress theme
+Theme Name: Eletions 2020
+Author: Elien
+Description: US elections 2020
 Version: 0.1
 Requires at least: 5.0
 Tested up to: 5.5
@@ -11,88 +9,100 @@ Requires PHP: 7.3.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+$body-bg: #cfcccc;
+$gutter: 64px;
 
-$grey: #c0c0c0;
-$white: #fff;
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: $grey;
-  margin: 0;
-  padding: 0;
-
-  .navigation {
-    background: $white;
-    padding: 1rem 2rem;
-
-    &.footer {
-      background: transparent;
-    }
-
-    ul {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-
-      li {
-        a {
-          text-decoration: none;
-          color: #000;
-
-          &:hover {
-            text-decoration: underline;
-          }
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+background-color: $body-bg;
+    
+    .hero{
+        width:100%;
+        height:450px;
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
-
-        &:not(:last-child) {
-          margin-right: 1rem;
-        }
-      }
     }
-  }
+    .container{
+        // padding:0 $gutter*2;
+        width: 100%;
+        .row{
+            display:flex;
+            &.right{
+                flex-direction: row-reverse;
+            }
+            img{
+                width: 50%;
+                height: auto;
+                margin-bottom:$gutter;
+                padding: 1rem;
+            }
+        }
+    }
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #413296;
+        padding:$gutter/2;
+        .custom-logo-link {
+            width: auto;
+            height: 100px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+        }
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+            li{
+                margin-left:$gutter/2;
+                list-style: none;
+                a{
+                    color:#fff;
+                    text-decoration: none;
+                    &:hover{
+                        color:#cac7c7;
+                    }
+                }
+                
+            }
+        }
+        
+    }
+}
+h2 {
+    font-size: 2rem;
+}
 
-  .back {
-    display: block;
+p {
+    color: grey;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecebeb;
+    width: 80%;
+    margin: $gutter/2 auto;
+}
+
+a {
     text-decoration: none;
-    font-style: italic;
-    margin: 2rem 0 1rem 0;
-  }
+}
 
-  .hero {
+.single-post {
+    margin: 0;
     width: 100%;
-    height: 450px;
-
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .container {
-    margin: 0 auto;
-    max-width: 500px;
-    padding: 0 1 rem;
-
-    .card {
-      display: block;
-      font-size: 1rem;
-      font-weight: 300;
-      text-decoration: none;
-      color: #000;
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      background-color: $white;
-      border-radius: 5px;
-      padding: 5px 10px;
-      box-shadow: 38px 35px 57px -18px rgba(110,110,110, .5);
-
-      &:not(:last-child) {
-        margin-bottom: 10px;
-      }
-    }
-  }
+    height: 500px;
+    object-fit: contain;
 }
